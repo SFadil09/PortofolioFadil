@@ -4,7 +4,6 @@ import AnimatedSection from '@/components/AnimatedSection'
 import ProjectCard from '@/components/ProjectCard'
 import CertificateCard from '@/components/CertificateCard'
 import { projects } from '@/data/projects'
-import { certificates } from '@/data/certificates'
 
 export const metadata: Metadata = {
   title: 'Satriawan Muammar Fadil – IoT & Automation Engineer',
@@ -130,53 +129,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Certificates & Achievements ── */}
-      <section className="py-24 px-6">
-        <div className="max-w-6xl mx-auto">
-          <AnimatedSection className="mb-12">
-            <div>
-              <p className="text-xs text-indigo-400 font-semibold uppercase tracking-widest mb-2">
-                Credentials
-              </p>
-              <h2 className="text-3xl md:text-4xl font-bold text-white">
-                Certificates &amp; Achievements
-              </h2>
-            </div>
-          </AnimatedSection>
-
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-5">
-            {certificates.map((cert, i) => (
-              <CertificateCard key={cert.id} certificate={cert} index={i} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Bottom CTA ── */}
-      <AnimatedSection className="py-24 px-6">
-        <div className="max-w-2xl mx-auto text-center">
-          <div className="relative rounded-3xl p-10 md:p-14 overflow-hidden border border-white/[0.07]">
-            {/* Background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 via-violet-500/5 to-transparent" />
-            <div className="absolute inset-0 bg-grid opacity-30" />
-            <div className="relative z-10">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Let&apos;s Build Something
-              </h2>
-              <p className="text-zinc-400 mb-8 text-sm leading-relaxed max-w-md mx-auto">
-                Open to freelance projects and full-time roles in IoT, automation, and
-                embedded systems engineering.
-              </p>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium transition-all hover:shadow-xl hover:shadow-indigo-500/20 hover:-translate-y-0.5"
-              >
-                Start a Conversation →
-              </Link>
-            </div>
-          </div>
-        </div>
-      </AnimatedSection>
     </>
   )
 }

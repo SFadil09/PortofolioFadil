@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import AnimatedSection from '@/components/AnimatedSection'
 
 export const metadata: Metadata = {
@@ -77,8 +78,15 @@ export default function About() {
           <div className="grid md:grid-cols-3 gap-8">
             {/* Avatar */}
             <div className="flex flex-col items-center gap-5">
-              <div className="w-28 h-28 rounded-3xl bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center text-white font-bold text-3xl shadow-2xl shadow-indigo-500/20 select-none">
-                SMF
+              <div className="w-28 h-28 rounded-3xl overflow-hidden shadow-2xl shadow-indigo-500/20 relative">
+                <Image
+                  src="/profil-fadil.jpg"
+                  alt="Satriawan Muammar Fadil"
+                  fill
+                  sizes="112px"
+                  className="object-cover"
+                  priority
+                />
               </div>
               <div className="text-center">
                 <p className="text-white font-semibold">Satriawan Muammar Fadil</p>
