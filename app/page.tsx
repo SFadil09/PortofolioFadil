@@ -2,7 +2,9 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import AnimatedSection from '@/components/AnimatedSection'
 import ProjectCard from '@/components/ProjectCard'
+import CertificateCard from '@/components/CertificateCard'
 import { projects } from '@/data/projects'
+import { certificates } from '@/data/certificates'
 
 export const metadata: Metadata = {
   title: 'Satriawan Muammar Fadil – IoT & Automation Engineer',
@@ -123,6 +125,28 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-5">
             {projects.map((project, i) => (
               <ProjectCard key={project.slug} project={project} index={i} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Certificates & Achievements ── */}
+      <section className="py-24 px-6">
+        <div className="max-w-6xl mx-auto">
+          <AnimatedSection className="mb-12">
+            <div>
+              <p className="text-xs text-indigo-400 font-semibold uppercase tracking-widest mb-2">
+                Credentials
+              </p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">
+                Certificates &amp; Achievements
+              </h2>
+            </div>
+          </AnimatedSection>
+
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-5">
+            {certificates.map((cert, i) => (
+              <CertificateCard key={cert.id} certificate={cert} index={i} />
             ))}
           </div>
         </div>

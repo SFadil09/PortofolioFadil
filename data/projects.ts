@@ -7,6 +7,10 @@ export interface Project {
   category: string;
   icon: string;
   highlights: string[];
+  /** Optional cover image shown on the project card */
+  image?: string;
+  /** Optional additional images shown on the detail page */
+  images?: string[];
 }
 
 export const projects: Project[] = [
