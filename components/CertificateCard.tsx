@@ -25,13 +25,6 @@ export default function CertificateCard({ certificate, index }: Props) {
       {/* Certificate image preview */}
       {certificate.image ? (
         <div className="relative w-full h-40 overflow-hidden bg-zinc-800/60">
-          <Image
-            src={certificate.image}
-            alt={certificate.title}
-            fill
-            sizes="(max-width: 768px) 100vw, 33vw"
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-          />
           <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/70 to-transparent" />
         </div>
       ) : (
@@ -71,7 +64,7 @@ export default function CertificateCard({ certificate, index }: Props) {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-sm text-indigo-400 hover:text-indigo-300 font-medium transition-colors mt-4 group/link"
           >
-            View Credential
+            View Certificate
             <span className="group-hover/link:translate-x-1 transition-transform duration-200">↗</span>
           </a>
         )}

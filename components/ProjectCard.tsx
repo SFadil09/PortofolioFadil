@@ -24,18 +24,6 @@ export default function ProjectCard({ project, index }: Props) {
       <div className="h-px w-full bg-gradient-to-r from-transparent via-indigo-500/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
       {/* Cover image */}
-      {project.image && (
-        <div className="relative w-full h-44 overflow-hidden bg-zinc-800/60">
-          <Image
-            src={project.image}
-            alt={project.title}
-            fill
-            sizes="(max-width: 768px) 100vw, 33vw"
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/70 to-transparent" />
-        </div>
-      )}
 
       <div className="flex flex-col flex-1 p-6">
         {/* Icon + Category */}

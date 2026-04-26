@@ -1,3 +1,23 @@
+export interface ProjectImages {
+  blockDiagram?: string;
+  wiring?: string;
+  design3D?: string;
+  commsDiagram?: {
+    src: string;
+    alt: string;
+    caption?: string;
+  };
+}
+
+export interface ProjectCertificate {
+  title: string;
+  issuer: string;
+  year: string;
+  description?: string;
+  preview?: string;
+  file?: string;
+}
+
 export interface Project {
   slug: string;
   title: string;
@@ -9,8 +29,10 @@ export interface Project {
   highlights: string[];
   /** Optional cover image shown on the project card */
   image?: string;
-  /** Optional additional images shown on the detail page */
-  images?: string[];
+  /** Optional structured diagram/design images shown on the detail page */
+  projectImages?: ProjectImages;
+  /** Optional HKI / intellectual property certificate */
+  certificate?: ProjectCertificate;
 }
 
 export const projects: Project[] = [
@@ -34,6 +56,7 @@ The mechanical structure was fully designed using SolidWorks and manufactured in
     ],
     category: "Robotics & Control",
     icon: "🚀",
+    image: "/uav-block-diagram.png",
     highlights: [
       "Designed and fabricated the full pneumatic launcher mechanism",
       "Implemented and tuned PID control algorithm for precise speed regulation",
@@ -41,6 +64,19 @@ The mechanical structure was fully designed using SolidWorks and manufactured in
       "3D modeled launcher structure using SolidWorks with manufacturing tolerances",
       "Achieved consistent launch performance within target velocity parameters",
     ],
+    projectImages: {
+      blockDiagram: "/uav-block-diagram.png",
+      wiring: "/uav-wiring.jpg",
+      design3D: "/uav-3d-design.png",
+    },
+    certificate: {
+      title: "Industrial Design Certificate - UAV Launcher",
+      issuer: "Directorate General of Intellectual Property (DGIP), Indonesia",
+      year: "2024",
+      description:
+        "This project has been officially registered as an industrial design under Intellectual Property Rights (HKI), proving originality and ownership of the UAV launcher system.",
+      file: "/hki-uav-launcher.pdf",
+    },
   },
   {
     slug: "iot-smart-building",
@@ -70,6 +106,14 @@ Network architecture, IP addressing, and firmware configuration were handled end
       "Designed and implemented full network architecture for sensor communication",
       "Successfully deployed in live government infrastructure at IKN",
     ],
+    projectImages: {
+      commsDiagram: {
+        src: "/lorawan-bacnet-diagram.png",
+        alt: "LoRaWAN to BACnet communication architecture using Milesight UG65, WS202, EM400 integrated with Niagara IBMS",
+        caption:
+          "Communication flow from field devices to IBMS Niagara platform.",
+      },
+    },
   },
   {
     slug: "water-quality-monitoring",
@@ -98,5 +142,13 @@ Emphasis was placed on stable long-term data acquisition, proper sensor calibrat
       "Integrated sensor data into centralized monitoring system",
       "Validated measurement accuracy against reference instruments",
     ],
+    projectImages: {
+      commsDiagram: {
+        src: "/modbus-water-quality-diagram.png",
+        alt: "Modbus RTU to TCP communication using USR-N520 with Supmea pH, TDS, and Turbidity sensors integrated to Niagara IBMS",
+        caption:
+          "Communication flow from field devices to IBMS Niagara platform.",
+      },
+    },
   },
 ];

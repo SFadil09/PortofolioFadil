@@ -1,4 +1,4 @@
-// File: D:\Habib Files\PortofolioFadil\app\projects\[slug]\page.tsx
+// File: /Users/habib/Documents/Coencept/PortofolioFadil/app/projects/[slug]/page.tsx
 import * as entry from '../../../../../app/projects/[slug]/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

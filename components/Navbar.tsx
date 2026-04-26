@@ -10,6 +10,7 @@ const navLinks = [
   { href: '/about', label: 'About' },
   { href: '/projects', label: 'Projects' },
   { href: '/experience', label: 'Experience' },
+  { href: '/certificates', label: 'Certificates' },
   { href: '/contact', label: 'Contact' },
 ]
 
@@ -75,7 +76,7 @@ export default function Navbar() {
 
           {/* Desktop CTA */}
           <Link
-            href="/contact"
+            href="mailto:satriawanfadil67@gmail.com"
             className="hidden md:inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium transition-colors shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/30"
           >
             Hire Me
